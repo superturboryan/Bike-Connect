@@ -14,6 +14,10 @@
   <a href="https://apps.apple.com/us/app/bike-connect-ride-smarter/id6746517051">
     <img height="90" src="https://github.com/user-attachments/assets/e8c9999a-7438-4fd9-b8ba-e61c31e392f0" />
   </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="comingsoon.com">
+    <img height="90" src="https://i.ibb.co/vC6bzG5N/Get-It-On-Google-Play-Badge-Web-color-English.png" />
+  </a>
 </p>
 
 Bike Connect turns your Di2 bike’s handlebar buttons into controls for your iPhone, Apple Watch, and Mac. Control music and volume, view gear/battery/firmware, use your flashlight as a headlight, ring a virtual bell, and even trigger keyboard shortcuts to control any app (such as **Zwift**) on Mac.
@@ -22,12 +26,12 @@ Bike Connect turns your Di2 bike’s handlebar buttons into controls for your iP
 + Full music control — play, pause, and skip in Apple Music, Spotify, and more
 + Volume at your fingertips — raise/lower volume or mute instantly
 + Bike data — view gear selection, battery level, and firmware version
-+ Use your flashlight as a headlight — toggle on/off or quick flash (**iOS only**)
-+ Ring a virtual bell — play a bell sound even on the lock screen (**iOS only**)
++ Use your flashlight as a headlight — toggle on/off or quick flash (**iOS + Android only**)
++ Ring a virtual bell — play a bell sound even on the lock screen (**iOS + Android only**)
 + Keyboard shortcuts for (virtual cycling) apps (**macOS only**)
 + Apple Watch app — turn your watch into a gear indicator (**watchOS**)
 
-## What’s New (1.2.0)
+## What’s New (iOS + macOS 1.2.0)
 A big 1.2.0 for Bike Connect! Revamped with Apple’s new Liquid Glass design and a standalone Apple Watch app.
 - New: Independent watchOS app — connect to your BLE bike, see your current gears, and ring a bell from shifter top buttons (no phone needed)
 - New: Cowbell sound to celebrate this release. More cowbell!
@@ -55,7 +59,7 @@ A big 1.2.0 for Bike Connect! Revamped with Apple’s new Liquid Glass design an
 </p>
 
 ## Getting Started
-1. Install Bike Connect on your iPhone, iPad, Mac, or Apple Watch from the App Store.
+1. Install Bike Connect on your iPhone, Android, Mac, or Apple Watch from the App Store/Play Store.
 2. Wake your bike's Bluetooth module and open Bike Connect.
 3. When prompted, grant **Bluetooth** access.
 4. From the **Connect** screen, select your device to pair.
@@ -63,7 +67,7 @@ A big 1.2.0 for Bike Connect! Revamped with Apple’s new Liquid Glass design an
 
 ## Requirements
 - Bluetooth LE–enabled bike/controller
-- iPhone, iPad, Mac, or Apple Watch with Bluetooth enabled
+- iPhone, Android, iPad, Mac, or Apple Watch with Bluetooth enabled
 
 ## Localizations
 - Dutch
