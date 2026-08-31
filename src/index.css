@@ -373,7 +373,7 @@ h1 {
 }
 
 .section-heading .eyebrow {
-  color: #0877bf;
+  color: #006bad;
 }
 
 .section-heading h2,
@@ -455,7 +455,7 @@ h1 {
   display: inline-flex;
   gap: 0.45rem;
   margin-top: 2rem;
-  color: #0877bf;
+  color: #006bad;
   font-weight: 750;
 }
 
@@ -538,7 +538,7 @@ h1 {
 
 .platform-label {
   margin: 0 0 0.7rem;
-  color: #0877bf;
+  color: #006bad;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -716,7 +716,7 @@ h1 {
 }
 
 .faq-item button > span:last-child {
-  color: #0877bf;
+  color: #006bad;
   font-size: 1.45rem;
 }
 

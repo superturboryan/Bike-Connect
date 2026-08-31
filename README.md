@@ -1,5 +1,7 @@
 # Bike Connect
 
+**Control your phone from your Di2 handlebars.** Visit [bike-connect.app](https://bike-connect.app) for product details, compatibility, setup instructions, and downloads.
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/05551987-835f-40db-b919-3e81aa54f96c" height="280"/>
   <img src="https://github.com/user-attachments/assets/54c05416-c4eb-4c13-b34f-31c55b4badef" height="280"/>
@@ -11,7 +13,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/4ba2f8a4-4e4c-4bff-81f2-9a64435dd8e0" height="90" />
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://apps.apple.com/us/app/bike-connect-ride-smarter/id6746517051">
+  <a href="https://apps.apple.com/app/id6746517051">
     <img height="90" src="https://github.com/user-attachments/assets/e8c9999a-7438-4fd9-b8ba-e61c31e392f0" />
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,6 +67,8 @@ A big 1.2.0 for Bike Connect! Revamped with Apple’s new Liquid Glass design an
 4. From the **Connect** screen, select your device to pair.
 5. Assign actions to the buttons on your handlebars.
 
+For pairing details and platform-specific guidance, see the [complete Di2 button setup guide](https://bike-connect.app/how-to-control-your-phone-with-shimano-di2-buttons).
+
 ## Requirements
 - Bluetooth LE–enabled bike/controller
 - iPhone, Android, iPad, Mac, or Apple Watch with Bluetooth enabled
@@ -81,8 +85,9 @@ A big 1.2.0 for Bike Connect! Revamped with Apple’s new Liquid Glass design an
 ## Support ☎️
 
 For help or questions about Bike Connect:
-- See our [FAQ](https://github.com/superturboryan/Bike-Connect/discussions/1) 💬
+- Visit [Bike Connect Support](https://bike-connect.app/support) 🛟
+- See our [GitHub Discussions](https://github.com/superturboryan/Bike-Connect/discussions) 💬
 - See the [issues page](https://github.com/superturboryan/Bike-Connect/issues), or [open a new issue](https://github.com/superturboryan/Bike-Connect/issues/new) ✋
 - [Send an email](mailto:watchcloud.app@gmail.com) 💌
 
-### [Privacy Policy](https://github.com/superturboryan/Bike-Connect/blob/main/PRIVACY.md)
+### [Privacy Policy](https://bike-connect.app/privacy)

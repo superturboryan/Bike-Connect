@@ -5,11 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#080b10" />
     <meta name="description" content="Turn Shimano Di2 hood buttons into controls for music, volume, lights, a virtual bell, and live bike data on Apple and Android devices." />
+    <meta name="author" content="Bike Connect" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://bike-connect.app/" />
-    <link rel="icon" type="image/png" href="/app-icon.png" />
-    <link rel="apple-touch-icon" href="/app-icon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preload" as="image" href="/hero-video-poster.webp" type="image/webp" />
     <title>Control Your Phone with Shimano Di2 Buttons | Bike Connect</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bike-connect.app/" />
+    <meta property="og:title" content="Control Your Phone with Di2 Buttons | Bike Connect" />
+    <meta property="og:description" content="Turn Shimano Di2 hood buttons into controls for music, volume, lights, a virtual bell, and live bike data." />
+    <meta property="og:image" content="https://bike-connect.app/og-image.jpg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1260" />
+    <meta property="og:image:alt" content="Bike Connect controlling a phone from road-bike handlebars" />
+    <meta property="og:site_name" content="Bike Connect" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Control Your Phone with Di2 Buttons | Bike Connect" />
+    <meta name="twitter:description" content="Music, volume, lights, a virtual bell, and live bike data from your handlebars." />
+    <meta name="twitter:image" content="https://bike-connect.app/og-image.jpg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Bike Connect",
+            "applicationCategory": "SportsApplication",
+            "operatingSystem": "iOS, iPadOS, Android, macOS, watchOS",
+            "description": "Turn Bluetooth-enabled Shimano Di2 hood buttons into controls for music, volume, lights, a virtual bell, keyboard shortcuts, and live bike data.",
+            "url": "https://bike-connect.app/",
+            "downloadUrl": [
+              "https://apps.apple.com/app/id6746517051",
+              "https://play.google.com/store/apps/details?id=com.stylesdevelopments.bikeconnect"
+            ],
+            "image": "https://bike-connect.app/og-image.jpg",
+            "author": { "@type": "Person", "name": "Ryan Forsyth", "url": "https://ryanforsyth.dev" },
+            "sameAs": "https://github.com/superturboryan/Bike-Connect"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Which bikes work with Bike Connect?", "acceptedAnswer": { "@type": "Answer", "text": "Bike Connect supports Bluetooth-enabled Shimano Di2 groupsets with programmable hood or top buttons. Many 11-speed setups require an EW-WU101 or EW-WU111 wireless unit." } },
+              { "@type": "Question", "name": "Can Bike Connect work while my phone is locked?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. After pairing and granting Bluetooth access, assigned button actions can continue while Bike Connect is in the background or your phone is locked." } },
+              { "@type": "Question", "name": "Can the app change my bike settings?", "acceptedAnswer": { "@type": "Answer", "text": "No. Bike Connect reads button presses and bike status but cannot modify shifting configuration or bike settings." } },
+              { "@type": "Question", "name": "Do I need a phone for the Apple Watch app?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Apple Watch app can connect directly to a compatible Bluetooth bike for gear information and bell controls." } }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

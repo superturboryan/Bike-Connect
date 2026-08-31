@@ -31,7 +31,7 @@ function HeroVideo() {
           allowFullScreen
         />
       ) : (
-        <button type="button" className="video-poster" onClick={() => setIsPlaying(true)} aria-label="Play the Bike Connect iPhone demo">
+        <button type="button" className="video-poster" onClick={() => setIsPlaying(true)} aria-label="Watch the iPhone demo">
           <picture>
             <source type="image/webp" srcSet="/hero-video-poster.webp" />
             <img src="/hero-video-poster.png" alt="Bike Connect controls and live gear display on iPhone" width="1242" height="2688" fetchPriority="high" />
@@ -137,7 +137,7 @@ function App() {
           </div>
         </section>
 
-        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon.png" alt="" width="96" height="96" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p>Choose your platform and make every extra Di2 button count.</p><StoreButtons placement="final" /></div></section>
+        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon-ios.png" alt="" width="96" height="96" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p>Choose your platform and make every extra Di2 button count.</p><StoreButtons placement="final" /></div></section>
       </main>
 
       {showStickyBar && <div className="sticky-download" role="region" aria-label="Download Bike Connect"><span>Bike Connect</span><a href="#download">Get the app</a></div>}
