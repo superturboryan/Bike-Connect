@@ -1,0 +1,88 @@
+import type { ReactNode } from 'react'
+
+export const APP_STORE_URL = 'https://apps.apple.com/app/id6746517051'
+export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.stylesdevelopments.bikeconnect'
+
+export type StorePlatform = 'apple' | 'android'
+export type StorePlacement = 'header' | 'hero' | 'sticky' | 'final' | 'footer' | 'content'
+
+type StoreLinkProps = {
+  platform: StorePlatform
+  placement: StorePlacement
+  className?: string
+  children: ReactNode
+}
+
+export function StoreLink({ platform, placement, className = '', children }: StoreLinkProps) {
+  const href = platform === 'apple' ? APP_STORE_URL : GOOGLE_PLAY_URL
+
+  return (
+    <a
+      href={href}
+      className={className}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-store-platform={platform}
+      data-cta-placement={placement}
+    >
+      {children}
+    </a>
+  )
+}
+
+export function StoreButtons({ placement, compact = false }: { placement: StorePlacement; compact?: boolean }) {
+  return (
+    <div className={`store-buttons${compact ? ' store-buttons-compact' : ''}`}>
+      <StoreLink platform="apple" placement={placement} className="store-button store-button-apple">
+        <span className="store-button-label">Download on the</span>
+        <strong>App Store</strong>
+      </StoreLink>
+      <StoreLink platform="android" placement={placement} className="store-button store-button-play">
+        <span className="store-button-label">Get it on</span>
+        <strong>Google Play</strong>
+      </StoreLink>
+    </div>
+  )
+}
+
+export function Header() {
+  return (
+    <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <header className="site-header">
+        <div className="nav-container">
+          <a href="/" className="brand" aria-label="Bike Connect home">
+            <img src="/app-icon.png" alt="" width="42" height="42" />
+            <span>Bike Connect</span>
+          </a>
+          <nav aria-label="Primary navigation" className="nav-links">
+            <a href="/#features">Features</a>
+            <a href="/support">Support</a>
+            <StoreLink platform="apple" placement="header" className="header-cta">Get the app</StoreLink>
+          </nav>
+        </div>
+      </header>
+    </>
+  )
+}
+
+export function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="container footer-layout">
+        <div>
+          <a href="/" className="brand footer-brand">
+            <img src="/app-icon.png" alt="" width="38" height="38" />
+            <span>Bike Connect</span>
+          </a>
+          <p>Less distraction. More ride.</p>
+        </div>
+        <nav aria-label="Footer navigation" className="footer-links">
+          <a href="/support">Support</a>
+          <a href="/privacy">Privacy</a>
+        </nav>
+        <p className="legal-note">Bike Connect is an independent app and is not affiliated with or endorsed by Shimano. Shimano and Di2 are trademarks of their respective owners.</p>
+      </div>
+    </footer>
+  )
+}
