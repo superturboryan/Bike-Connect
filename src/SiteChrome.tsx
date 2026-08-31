@@ -56,9 +56,10 @@ export function Header() {
             <span>Bike Connect</span>
           </a>
           <nav aria-label="Primary navigation" className="nav-links">
+            <a href="/#how-it-works">How it works</a>
             <a href="/#features">Features</a>
             <a href="/support">Support</a>
-            <StoreLink platform="apple" placement="header" className="header-cta">Get the app</StoreLink>
+            <a href="/#download" className="header-cta">Get the app</a>
           </nav>
         </div>
       </header>
@@ -78,8 +79,10 @@ export function Footer() {
           <p>Less distraction. More ride.</p>
         </div>
         <nav aria-label="Footer navigation" className="footer-links">
+          <a href="/how-to-control-your-phone-with-shimano-di2-buttons">Setup guide</a>
           <a href="/support">Support</a>
           <a href="/privacy">Privacy</a>
+          <a href="https://github.com/superturboryan/Bike-Connect" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
         <p className="legal-note">Bike Connect is an independent app and is not affiliated with or endorsed by Shimano. Shimano and Di2 are trademarks of their respective owners.</p>
       </div>
