@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Footer, Header, StoreButtons } from './SiteChrome'
 import Aurora from './components/reactbits/Aurora'
 import FadeContent from './components/reactbits/FadeContent'
@@ -40,15 +40,6 @@ function HeroVideo() {
 
 function App() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [showStickyBar, setShowStickyBar] = useState(false)
-
-  useEffect(() => {
-    const hero = document.querySelector('.hero')
-    if (!hero) return
-    const observer = new IntersectionObserver(([entry]) => setShowStickyBar(!entry.isIntersecting), { threshold: 0.05 })
-    observer.observe(hero)
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <>
@@ -137,10 +128,9 @@ function App() {
           </div>
         </section>
 
-        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon-ios.png" alt="" width="96" height="96" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p>Choose your platform and make every extra Di2 button count.</p><StoreButtons placement="final" /></div></section>
+        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon-ios.png" alt="" width="96" height="96" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p className="final-cta-copy"><span>Choose your platform and make</span>{' '}<span>every extra Di2 button count.</span></p><StoreButtons placement="final" /></div></section>
       </main>
 
-      {showStickyBar && <div className="sticky-download" role="region" aria-label="Download Bike Connect"><span>Bike Connect</span><a href="#download">Get the app</a></div>}
       <Footer />
     </>
   )

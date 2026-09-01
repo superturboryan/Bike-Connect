@@ -792,30 +792,6 @@ h1 {
   color: #aeb7c3;
 }
 
-.sticky-download {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 18;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.55rem 0.55rem 0.55rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  background: rgba(12, 16, 23, 0.9);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(16px);
-  font-size: 0.9rem;
-  font-weight: 720;
-}
-
-.sticky-download a {
-  padding: 0.6rem 0.9rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--blue-deep), #2db9ff);
-}
-
 .site-footer {
   padding-block: 3.5rem;
   border-top: 1px solid var(--border);
@@ -989,6 +965,10 @@ h1 {
 
   .proof-list {
     margin-top: 1.25rem;
+  }
+
+  .final-cta-copy span {
+    display: block;
   }
 
   .store-buttons {
@@ -1189,10 +1169,6 @@ h1 {
 
   .demo-grid {
     grid-template-columns: minmax(0, 340px);
-  }
-
-  .sticky-download {
-    display: none;
   }
 
 }

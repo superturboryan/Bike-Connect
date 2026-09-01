@@ -97,7 +97,7 @@ export function Footer() {
         </nav>
         <p className="legal-note">
           <span>Bike Connect is an independent app and is not affiliated with or endorsed by Shimano.</span>
-          <span>Shimano and Di2 are trademarks of their respective owners.</span>
+          <span>Shimano and Di2 are trademarks of Shimano Inc.</span>
         </p>
         <p className="maker-note">Made with <span aria-label="love">🩵</span> by <a href="https://ryanforsyth.dev" target="_blank" rel="noopener noreferrer">Ryan</a> &amp; <a href="https://tstyles.dev/" target="_blank" rel="noopener noreferrer">Taylor</a></p>
       </div>
