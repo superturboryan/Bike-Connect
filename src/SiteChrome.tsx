@@ -69,7 +69,7 @@ export function Header() {
           <nav aria-label="Primary navigation" className="nav-links">
             <a href="/#how-it-works">How it works</a>
             <a href="/#features">Features</a>
-            <a href="/support">Support</a>
+            <a href="/support" className="nav-support">Support</a>
             <a href="/#download" className="header-cta">Get the app</a>
           </nav>
         </div>
@@ -95,7 +95,11 @@ export function Footer() {
           <a href="/privacy">Privacy</a>
           <a href="https://github.com/superturboryan/Bike-Connect" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
-        <p className="legal-note">Bike Connect is an independent app and is not affiliated with or endorsed by Shimano. Shimano and Di2 are trademarks of their respective owners.</p>
+        <p className="legal-note">
+          <span>Bike Connect is an independent app and is not affiliated with or endorsed by Shimano.</span>
+          <span>Shimano and Di2 are trademarks of their respective owners.</span>
+        </p>
+        <p className="maker-note">Made with <span aria-label="love">🩵</span> by <a href="https://ryanforsyth.dev" target="_blank" rel="noopener noreferrer">Ryan</a> &amp; <a href="https://tstyles.dev/" target="_blank" rel="noopener noreferrer">Taylor</a></p>
       </div>
     </footer>
   )

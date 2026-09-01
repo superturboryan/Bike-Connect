@@ -15,7 +15,7 @@ const features = [
 ]
 
 const faqs = [
-  { question: 'Which bikes work with Bike Connect?', answer: 'Bike Connect supports Bluetooth-enabled Shimano Di2 groupsets with programmable hood or top buttons. Most 12-speed road Di2 setups include wireless connectivity. Many 11-speed setups require an EW-WU101 or EW-WU111 wireless unit.' },
+  { question: 'Which bikes work with Bike Connect?', answer: 'Bike Connect supports Bluetooth LE Shimano Di2 systems with readable hood, top, or shift-switch buttons. This includes current DURA-ACE, ULTEGRA, SHIMANO 105, GRX, XTR, DEORE XT, and select DEORE Di2 systems. Older 11-speed setups may require an EW-WU101, EW-WU111, or SC-MT800 wireless unit.' },
   { question: 'Can Bike Connect work while my phone is locked?', answer: 'Yes. After pairing and granting Bluetooth access, assigned button actions can continue while Bike Connect is in the background or your phone is locked.' },
   { question: 'Can the app change my bike settings?', answer: 'No. Bike Connect reads button presses and bike status, but it cannot modify shifting configuration or send setup changes back to your bike.' },
   { question: 'Do I need a phone for the Apple Watch app?', answer: 'No. The Apple Watch app can connect directly to a compatible Bluetooth bike for a glanceable gear display and bell controls.' },
@@ -60,7 +60,7 @@ function App() {
             <FadeContent className="hero-copy" duration={760} blur>
               <p className="eyebrow">Your bike buttons, upgraded</p>
               <h1>Control your phone from your handlebars.</h1>
-              <p className="hero-intro">Use your Di2 buttons for music, volume, lights, a bell, and live bike data…without reaching for the screen.</p>
+              <p className="hero-intro">Use your Di2 buttons for music, volume, lights, a bell, and live bike data without reaching for the screen.</p>
               <StoreButtons placement="hero" />
               <ul className="proof-list" aria-label="Bike Connect availability"><li>iOS, watchOS, macOS, Android</li><li>One-time purchase</li></ul>
             </FadeContent>
@@ -91,24 +91,31 @@ function App() {
 
         <section className="section platform-section">
           <div className="container">
-            <FadeContent className="section-heading"><p className="eyebrow">Choose your screen</p><h2>One bike. Every device you ride with.</h2><p>Core handlebar controls stay familiar while each platform adds features made for its role.</p></FadeContent>
+            <div className="platform-intro">
+              <FadeContent className="section-heading"><p className="eyebrow">Choose your screen</p><h2>Your controls, wherever you ride.</h2><p>Set up on your phone, glance from your watch, or control an indoor ride from your Mac.</p></FadeContent>
+              <FadeContent className="device-family" delay={100} duration={760} aria-hidden="true">
+                <span className="device-symbol device-symbol-iphone" />
+                <span className="device-symbol device-symbol-ipad" />
+                <span className="device-symbol device-symbol-watch" />
+                <span className="device-symbol device-symbol-mac" />
+              </FadeContent>
+            </div>
             <div className="platform-showcase">
-              <article className="platform-card platform-card-phone"><div className="platform-copy"><p className="platform-label">iPhone and iPad</p><h3>Your complete ride control center</h3><p>Customize taps, control music and volume, flash the light, ring a bell, and keep live gear data visible.</p></div><img src="/iphone-actions.webp" alt="Bike Connect action picker on iPhone" width="620" height="1342" loading="lazy" /></article>
-              <article className="platform-card platform-card-phone platform-card-android"><div className="platform-copy"><p className="platform-label">Android</p><h3>The same controls on your Android ride</h3><p>Pair your bike, map the buttons, control compatible media apps, and monitor gears and battery.</p></div><img src="/android-actions.webp" alt="Bike Connect action picker on Android" width="620" height="1102" loading="lazy" /></article>
-              <article className="platform-card platform-card-wide"><div className="platform-copy"><p className="platform-label">Mac</p><h3>Control indoor rides from the hoods</h3><p>Map Di2 buttons to keyboard shortcuts for apps such as Zwift, plus music and volume controls.</p></div><img src="/mac-control.webp" alt="Bike Connect controlling a Mac from Di2 handlebars" width="1200" height="750" loading="lazy" /></article>
-              <article className="platform-card platform-card-watch"><div className="platform-copy"><p className="platform-label">Apple Watch</p><h3>Gear display. Bell. No phone.</h3><p>Connect the watch directly to your bike for a glanceable gear readout and quick bell controls.</p></div><img src="/watch-control.webp" alt="Bike Connect gear display on Apple Watch" width="410" height="502" loading="lazy" /></article>
+              <article className="platform-card"><div className="platform-copy"><p className="platform-label">iOS + Android</p><h3>Phone &amp; tablet</h3><p>Pair your bike, personalize every tap, control media and lights, and view live ride data.</p></div></article>
+              <article className="platform-card"><div className="platform-copy"><p className="platform-label">watchOS</p><h3>Apple Watch</h3><p>See your gear and ring the bell from your wrist, with no phone connection required.</p></div></article>
+              <article className="platform-card"><div className="platform-copy"><p className="platform-label">macOS</p><h3>Mac</h3><p>Map Di2 buttons to keyboard shortcuts for indoor cycling, music, and volume controls.</p></div></article>
             </div>
           </div>
         </section>
 
         <section className="section compatibility-section">
           <div className="container compatibility-layout">
-            <div><p className="eyebrow">Compatibility</p><h2>Built for Bluetooth-enabled Di2.</h2><p>Bike Connect works with supported Shimano Di2 systems that expose programmable hood or top buttons over Bluetooth.</p><a className="text-link" href="/support#compatibility">Check compatibility details <span aria-hidden="true">→</span></a></div>
+            <div><p className="eyebrow">Compatibility</p><h2>Built for Bluetooth-enabled Di2.</h2><p>Bike Connect works with Shimano Di2 systems that expose their controls and ride data over Bluetooth LE.</p><a className="text-link" href="/support#compatibility">Check compatibility details <span aria-hidden="true">→</span></a><p className="compatibility-caveat">Bluetooth LE and readable hood, top, or shift-switch buttons are required. Only one bike app can connect at a time.</p></div>
             <div className="compatibility-list" role="list">
-              <div role="listitem"><strong>12-speed road Di2</strong><span>Wireless connectivity is typically built in.</span></div>
-              <div role="listitem"><strong>11-speed Di2</strong><span>May require an EW-WU101 or EW-WU111 wireless unit.</span></div>
-              <div role="listitem"><strong>One active connection</strong><span>Disconnect other bike apps before pairing.</span></div>
-              <div role="listitem"><strong>Read-only access</strong><span>Bike Connect cannot change your bike configuration.</span></div>
+              <div role="listitem"><strong>Modern road Di2</strong><span>DURA-ACE R9200, ULTEGRA R8100, and SHIMANO 105 R7100.</span></div>
+              <div role="listitem"><strong>GRX Di2</strong><span>RX825 and RX827; RX815 and RX817 with compatible D-FLY wireless hardware.</span></div>
+              <div role="listitem"><strong>11-speed road Di2</strong><span>DURA-ACE R9150/R9170 and ULTEGRA R8050/R8070 with EW-WU101 or EW-WU111.</span></div>
+              <div role="listitem"><strong>MTB Di2</strong><span>XTR M9250/M9050, DEORE XT M8250/M8050, and DEORE M6250; older systems require compatible Bluetooth hardware.</span></div>
             </div>
           </div>
         </section>
@@ -116,8 +123,8 @@ function App() {
         <section className="section demo-section">
           <div className="container"><FadeContent className="section-heading section-heading-dark"><p className="eyebrow">See the ride</p><h2>Bike Connect across every screen.</h2></FadeContent>
             <div className="demo-grid">
-              <a className="demo-card" href="https://www.youtube.com/shorts/hF24SAiNS_M" target="_blank" rel="noopener noreferrer"><img src="/mac-control.webp" alt="Bike Connect Mac demo preview" width="1200" height="750" loading="lazy" /><span><strong>Mac demo</strong><small>Watch on YouTube ↗</small></span></a>
-              <a className="demo-card demo-card-watch" href="https://www.youtube.com/shorts/MQUgxA9LwYc" target="_blank" rel="noopener noreferrer"><img src="/watch-control.webp" alt="Bike Connect Apple Watch demo preview" width="410" height="502" loading="lazy" /><span><strong>Apple Watch demo</strong><small>Watch on YouTube ↗</small></span></a>
+              <article className="demo-card"><iframe src="https://www.youtube-nocookie.com/embed/hF24SAiNS_M?rel=0&playsinline=1" title="Bike Connect Mac demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowFullScreen /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
+              <article className="demo-card"><iframe src="https://www.youtube-nocookie.com/embed/MQUgxA9LwYc?rel=0&playsinline=1" title="Bike Connect Apple Watch demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowFullScreen /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
             </div>
           </div>
         </section>

@@ -68,14 +68,14 @@
 .content-main h2 {
   margin: 0 0 1.25rem;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.01em;
   line-height: 1.05;
 }
 
 .content-main h3 {
   margin: 2rem 0 0.55rem;
   font-size: 1.2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .content-main p,
@@ -225,7 +225,7 @@
 .content-cta h2 {
   margin: 0;
   font-size: clamp(2.2rem, 5vw, 4rem);
-  letter-spacing: -0.05em;
+  letter-spacing: -0.01em;
 }
 
 .content-cta p {
@@ -271,6 +271,12 @@
 }
 
 @media (max-width: 560px) {
+  .content-main h2,
+  .content-main h3,
+  .content-cta h2 {
+    letter-spacing: 0;
+  }
+
   .requirements-grid {
     grid-template-columns: 1fr;
   }
