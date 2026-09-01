@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { FaAppStoreIos, FaGooglePlay } from 'react-icons/fa6'
 
 export const APP_STORE_URL = 'https://apps.apple.com/app/id6746517051'
 export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.stylesdevelopments.bikeconnect'
@@ -34,12 +35,22 @@ export function StoreButtons({ placement, compact = false }: { placement: StoreP
   return (
     <div className={`store-buttons${compact ? ' store-buttons-compact' : ''}`}>
       <StoreLink platform="apple" placement={placement} className="store-button store-button-apple">
-        <span className="store-button-label">Download on the</span>
-        <strong>App Store</strong>
+        <span className="store-button-content">
+          <FaAppStoreIos className="store-button-icon" aria-hidden="true" />
+          <span className="store-button-copy">
+            <span className="store-button-label">Download on the</span>
+            <strong>App Store</strong>
+          </span>
+        </span>
       </StoreLink>
       <StoreLink platform="android" placement={placement} className="store-button store-button-play">
-        <span className="store-button-label">Get it on</span>
-        <strong>Google Play</strong>
+        <span className="store-button-content">
+          <FaGooglePlay className="store-button-icon" aria-hidden="true" />
+          <span className="store-button-copy">
+            <span className="store-button-label">Get it on</span>
+            <strong>Google Play</strong>
+          </span>
+        </span>
       </StoreLink>
     </div>
   )

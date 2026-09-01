@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Footer, Header, StoreButtons } from './SiteChrome'
+import Aurora from './components/reactbits/Aurora'
+import FadeContent from './components/reactbits/FadeContent'
+import SpotlightCard from './components/reactbits/SpotlightCard'
 
 const DEMO_URL = 'https://www.youtube.com/watch?v=TRTYLt4lUhg'
 
@@ -19,29 +22,17 @@ const faqs = [
 ]
 
 function HeroVideo() {
-  const [isPlaying, setIsPlaying] = useState(false)
-
   return (
-    <div className="hero-video-shell">
-      {isPlaying ? (
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/TRTYLt4lUhg?autoplay=1&rel=0"
-          title="Bike Connect iPhone demo"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
-      ) : (
-        <button type="button" className="video-poster" onClick={() => setIsPlaying(true)} aria-label="Watch the iPhone demo">
-          <picture>
-            <source type="image/webp" srcSet="/hero-video-poster.webp" />
-            <img src="/hero-video-poster.png" alt="Bike Connect controls and live gear display on iPhone" width="1242" height="2688" fetchPriority="high" />
-          </picture>
-          <span className="play-button" aria-hidden="true"><span /></span>
-          <span className="play-label">Watch the iPhone demo</span>
-        </button>
-      )}
+    <FadeContent className="hero-video-shell" delay={140} duration={820} blur>
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/TRTYLt4lUhg?rel=0&playsinline=1"
+        title="Bike Connect iPhone demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        loading="eager"
+        allowFullScreen
+      />
       <a className="video-fallback" href={DEMO_URL} target="_blank" rel="noopener noreferrer">Open the demo on YouTube</a>
-    </div>
+    </FadeContent>
   )
 }
 
@@ -62,22 +53,22 @@ function App() {
       <Header />
       <main id="main-content">
         <section className="hero">
-          <div className="hero-glow hero-glow-blue" /><div className="hero-glow hero-glow-pink" />
+          <div className="hero-aurora" aria-hidden="true"><Aurora /></div>
           <div className="container hero-layout">
-            <div className="hero-copy">
+            <FadeContent className="hero-copy" duration={760} blur>
               <p className="eyebrow">Your bike buttons, upgraded</p>
-              <h1>Control your phone from your Di2 handlebars.</h1>
-              <p className="hero-intro">Turn the buttons already under your thumbs into controls for music, volume, lights, a virtual bell, and live bike data—without taking your hands off the bars.</p>
+              <h1>Control your phone from your handlebars.</h1>
+              <p className="hero-intro">Use your Di2 buttons for music, volume, lights, a bell, and live bike data…without reaching for the screen.</p>
               <StoreButtons placement="hero" />
-              <ul className="proof-list" aria-label="Bike Connect availability"><li>iPhone and Android</li><li>Apple Watch and Mac</li><li>One-time purchase</li></ul>
-            </div>
+              <ul className="proof-list" aria-label="Bike Connect availability"><li>iOS, watchOS, macOS, Android</li><li>One-time purchase</li></ul>
+            </FadeContent>
             <HeroVideo />
           </div>
         </section>
 
         <section id="how-it-works" className="section section-light">
           <div className="container">
-            <div className="section-heading"><p className="eyebrow">Set up in minutes</p><h2>Pair. Personalize. Ride.</h2><p>Bike Connect turns an extra set of Di2 buttons into controls that feel natural from the first ride.</p></div>
+            <FadeContent className="section-heading"><p className="eyebrow">Set up in minutes</p><h2>Pair. Personalize. Ride.</h2><p>Bike Connect turns an extra set of Di2 buttons into controls that feel natural from the first ride.</p></FadeContent>
             <ol className="steps-grid">
               <li><span>1</span><h3>Wake and pair</h3><p>Put your bike in Bluetooth pairing mode, open Bike Connect, and select your bike.</p></li>
               <li><span>2</span><h3>Choose your actions</h3><p>Assign single and double taps to the controls that matter on your ride.</p></li>
@@ -89,16 +80,16 @@ function App() {
 
         <section id="features" className="section feature-section">
           <div className="container">
-            <div className="section-heading section-heading-dark"><p className="eyebrow">More from every tap</p><h2>Your handlebars become a control surface.</h2><p>Useful actions, immediate bike information, and fewer reasons to touch a screen while riding.</p></div>
+            <FadeContent className="section-heading section-heading-dark"><p className="eyebrow">More from every tap</p><h2>Your handlebars become a control surface.</h2><p>Useful actions, immediate bike information, and fewer reasons to touch a screen while riding.</p></FadeContent>
             <div className="feature-grid">
-              {features.map((feature) => <article className="feature-card" key={feature.title}><span className="feature-number">{feature.number}</span><h3>{feature.title}</h3><p>{feature.description}</p></article>)}
+              {features.map((feature) => <SpotlightCard className="feature-card" key={feature.title}><article><span className="feature-number">{feature.number}</span><h3>{feature.title}</h3><p>{feature.description}</p></article></SpotlightCard>)}
             </div>
           </div>
         </section>
 
         <section className="section platform-section">
           <div className="container">
-            <div className="section-heading"><p className="eyebrow">Choose your screen</p><h2>One bike. Every device you ride with.</h2><p>Core handlebar controls stay familiar while each platform adds features made for its role.</p></div>
+            <FadeContent className="section-heading"><p className="eyebrow">Choose your screen</p><h2>One bike. Every device you ride with.</h2><p>Core handlebar controls stay familiar while each platform adds features made for its role.</p></FadeContent>
             <div className="platform-showcase">
               <article className="platform-card platform-card-phone"><div className="platform-copy"><p className="platform-label">iPhone and iPad</p><h3>Your complete ride control center</h3><p>Customize taps, control music and volume, flash the light, ring a bell, and keep live gear data visible.</p></div><img src="/iphone-actions.webp" alt="Bike Connect action picker on iPhone" width="620" height="1342" loading="lazy" /></article>
               <article className="platform-card platform-card-phone platform-card-android"><div className="platform-copy"><p className="platform-label">Android</p><h3>The same controls on your Android ride</h3><p>Pair your bike, map the buttons, control compatible media apps, and monitor gears and battery.</p></div><img src="/android-actions.webp" alt="Bike Connect action picker on Android" width="620" height="1102" loading="lazy" /></article>
@@ -121,7 +112,7 @@ function App() {
         </section>
 
         <section className="section demo-section">
-          <div className="container"><div className="section-heading section-heading-dark"><p className="eyebrow">See the ride</p><h2>Bike Connect across every screen.</h2></div>
+          <div className="container"><FadeContent className="section-heading section-heading-dark"><p className="eyebrow">See the ride</p><h2>Bike Connect across every screen.</h2></FadeContent>
             <div className="demo-grid">
               <a className="demo-card" href="https://www.youtube.com/shorts/hF24SAiNS_M" target="_blank" rel="noopener noreferrer"><img src="/mac-control.webp" alt="Bike Connect Mac demo preview" width="1200" height="750" loading="lazy" /><span><strong>Mac demo</strong><small>Watch on YouTube ↗</small></span></a>
               <a className="demo-card demo-card-watch" href="https://www.youtube.com/shorts/MQUgxA9LwYc" target="_blank" rel="noopener noreferrer"><img src="/watch-control.webp" alt="Bike Connect Apple Watch demo preview" width="410" height="502" loading="lazy" /><span><strong>Apple Watch demo</strong><small>Watch on YouTube ↗</small></span></a>
@@ -130,7 +121,7 @@ function App() {
         </section>
 
         <section id="faq" className="section section-light faq-section">
-          <div className="container-narrow"><div className="section-heading"><p className="eyebrow">Before your first ride</p><h2>Frequently asked questions</h2></div>
+          <div className="container-narrow"><FadeContent className="section-heading"><p className="eyebrow">Before your first ride</p><h2>Frequently asked questions</h2></FadeContent>
             <div className="faq-list">
               {faqs.map((faq, index) => { const isOpen = openFaq === index; const panelId = `faq-panel-${index}`; return <article className="faq-item" key={faq.question}><h3><button type="button" onClick={() => setOpenFaq(isOpen ? null : index)} aria-expanded={isOpen} aria-controls={panelId}><span>{faq.question}</span><span aria-hidden="true">{isOpen ? '−' : '+'}</span></button></h3><div id={panelId} className="faq-answer" hidden={!isOpen}><p>{faq.answer}</p></div></article> })}
             </div><a className="section-link" href="/support">Visit Bike Connect Support <span aria-hidden="true">→</span></a>

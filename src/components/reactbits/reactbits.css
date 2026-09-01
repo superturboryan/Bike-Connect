@@ -1,0 +1,69 @@
+.rb-aurora {
+  width: 100%;
+  height: 100%;
+}
+
+.rb-aurora canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rb-fade-content {
+  opacity: 0;
+  transform: translateY(16px);
+  transition-property: opacity, filter, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rb-fade-content-blur {
+  filter: blur(8px);
+}
+
+.rb-fade-content[data-visible="true"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.rb-spotlight-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(47, 174, 255, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.rb-spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 68%);
+  transition: opacity 400ms ease;
+}
+
+.rb-spotlight-card:hover::before,
+.rb-spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+.rb-spotlight-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-fade-content {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .rb-spotlight-card::before {
+    display: none;
+  }
+}

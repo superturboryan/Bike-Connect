@@ -8,7 +8,7 @@
   overflow: hidden;
   padding-block: clamp(4.5rem, 10vw, 8rem);
   color: #fff;
-  background: radial-gradient(circle at 85% 15%, rgba(255, 49, 95, 0.22), transparent 32%), radial-gradient(circle at 10% 80%, rgba(34, 167, 255, 0.24), transparent 35%), #090c11;
+  background: radial-gradient(circle at 85% 15%, rgba(53, 180, 255, 0.22), transparent 32%), radial-gradient(circle at 10% 80%, rgba(0, 95, 218, 0.28), transparent 35%), #090c11;
 }
 
 .content-hero-inner {
@@ -136,7 +136,7 @@
   place-items: center;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(135deg, #159eea, #ef315d);
+  background: linear-gradient(135deg, #075bd8, #2db9ff);
   font-weight: 800;
 }
 
@@ -181,7 +181,7 @@
 .action-button-primary {
   color: #fff;
   border-color: transparent;
-  background: linear-gradient(135deg, #168ee1, #e92d5a);
+  background: linear-gradient(135deg, #075bd8, #2db9ff);
 }
 
 .contents-card {
