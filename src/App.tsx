@@ -3,9 +3,10 @@ import { Footer, Header, StoreButtons } from './SiteChrome'
 import Aurora from './components/reactbits/Aurora'
 import FadeContent from './components/reactbits/FadeContent'
 import SpotlightCard from './components/reactbits/SpotlightCard'
+import YouTubeFacade from './components/YouTubeFacade'
 
 const REVIEW_URL = 'https://www.youtube.com/watch?v=ZwaorZB3_6s'
-const DEMO_URL = `${REVIEW_URL}&t=103s`
+const BETTERSHIFTING_URL = 'https://bettershifting.com/'
 
 const features = [
   { number: '01', title: 'Music without reaching', description: 'Play, pause, skip, mute, or adjust volume from the programmable buttons already under your thumbs.' },
@@ -24,17 +25,17 @@ const faqs = [
 
 function HeroVideo() {
   return (
-    <FadeContent className="hero-video-shell" delay={140} duration={820} blur>
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/ZwaorZB3_6s?start=103&rel=0&playsinline=1"
+    <div className="hero-video-shell">
+      <YouTubeFacade
+        videoId="ZwaorZB3_6s"
         title="BetterShifting review of Bike Connect"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        loading="eager"
-        allowFullScreen
+        thumbnailSrc="/video-review.webp"
+        start={103}
+        eager
       />
-      <p className="video-attribution">As seen on <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">BetterShifting</a></p>
+      <p className="video-attribution">As seen on <a href={BETTERSHIFTING_URL} target="_blank" rel="noopener noreferrer">BetterShifting</a></p>
       <a className="video-fallback" href={REVIEW_URL} target="_blank" rel="noopener noreferrer">Watch the full review on YouTube</a>
-    </FadeContent>
+    </div>
   )
 }
 
@@ -48,13 +49,13 @@ function App() {
         <section className="hero">
           <div className="hero-aurora" aria-hidden="true"><Aurora /></div>
           <div className="container hero-layout">
-            <FadeContent className="hero-copy" duration={760} blur>
+            <div className="hero-copy">
               <p className="eyebrow">Your bike buttons, upgraded</p>
               <h1>Control your phone from your handlebars.</h1>
               <p className="hero-intro">Use your Di2 buttons for music, volume, lights, a bell, and live bike data without reaching for the screen.</p>
               <StoreButtons placement="hero" />
               <ul className="proof-list" aria-label="Bike Connect availability"><li>iOS, watchOS, macOS, Android</li><li>One-time purchase</li></ul>
-            </FadeContent>
+            </div>
             <HeroVideo />
           </div>
         </section>
@@ -114,8 +115,8 @@ function App() {
         <section className="section demo-section">
           <div className="container"><FadeContent className="section-heading section-heading-dark"><p className="eyebrow">See the ride</p><h2>Bike Connect across every screen.</h2></FadeContent>
             <div className="demo-grid">
-              <article className="demo-card"><iframe src="https://www.youtube-nocookie.com/embed/hF24SAiNS_M?rel=0&playsinline=1" title="Bike Connect Mac demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowFullScreen /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
-              <article className="demo-card"><iframe src="https://www.youtube-nocookie.com/embed/MQUgxA9LwYc?rel=0&playsinline=1" title="Bike Connect Apple Watch demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowFullScreen /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
+              <article className="demo-card"><YouTubeFacade videoId="hF24SAiNS_M" title="Bike Connect Mac demo" thumbnailSrc="/video-mac-demo.webp" /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
+              <article className="demo-card"><YouTubeFacade videoId="MQUgxA9LwYc" title="Bike Connect Apple Watch demo" thumbnailSrc="/video-watch-demo.webp" /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
             </div>
           </div>
         </section>
@@ -128,7 +129,7 @@ function App() {
           </div>
         </section>
 
-        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon-ios.png" alt="" width="96" height="96" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p className="final-cta-copy"><span>Choose your platform and make</span>{' '}<span>every extra Di2 button count.</span></p><StoreButtons placement="final" /></div></section>
+        <section id="download" className="final-cta-section"><div className="container final-cta"><img src="/app-icon-ios-192.png" alt="" width="96" height="96" loading="lazy" decoding="async" /><p className="eyebrow">Ready to ride smarter?</p><h2>Put control back under your thumbs.</h2><p className="final-cta-copy"><span>Choose your platform and make</span>{' '}<span>every extra Di2 button count.</span></p><StoreButtons placement="final" /></div></section>
       </main>
 
       <Footer />

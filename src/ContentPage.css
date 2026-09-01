@@ -260,6 +260,19 @@
   color: #586372;
 }
 
+@supports (content-visibility: auto) {
+  .content-main > section,
+  .privacy-content > section,
+  .content-cta {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 520px;
+  }
+
+  .privacy-content > section {
+    contain-intrinsic-size: auto 260px;
+  }
+}
+
 @media (max-width: 820px) {
   .content-layout {
     grid-template-columns: 1fr;

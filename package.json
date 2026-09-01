@@ -11,16 +11,17 @@
   },
   "dependencies": {
     "ogl": "^1.0.11",
+    "preact": "^10.29.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@preact/preset-vite": "^2.10.6",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

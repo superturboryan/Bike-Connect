@@ -115,6 +115,13 @@ type AuroraProps = {
 }
 
 const DEFAULT_COLOR_STOPS: [string, string, string] = ['#064fff', '#24b5ff', '#8adfff']
+const TARGET_FRAME_DURATION = 1000 / 30
+
+type NavigatorWithConnection = Navigator & {
+  connection?: {
+    saveData?: boolean
+  }
+}
 
 export default function Aurora({
   colorStops = DEFAULT_COLOR_STOPS,
@@ -126,11 +133,18 @@ export default function Aurora({
 
   useEffect(() => {
     const container = containerRef.current
-    if (!container || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const prefersStaticBackground = window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 620px)').matches
+    const saveData = (navigator as NavigatorWithConnection).connection?.saveData === true
+    if (!container || prefersStaticBackground || saveData) return
 
     let renderer: Renderer
     try {
-      renderer = new Renderer({ alpha: true, premultipliedAlpha: true, antialias: true })
+      renderer = new Renderer({
+        alpha: true,
+        premultipliedAlpha: true,
+        antialias: false,
+        powerPreference: 'low-power',
+      })
     } catch {
       return
     }
@@ -173,15 +187,51 @@ export default function Aurora({
     resize()
 
     let animationFrame = 0
+    let isInViewport = false
+    let lastRenderTime = -TARGET_FRAME_DURATION
+
     const update = (time: number) => {
+      if (!isInViewport || document.hidden) {
+        animationFrame = 0
+        return
+      }
+
       animationFrame = requestAnimationFrame(update)
+      if (time - lastRenderTime < TARGET_FRAME_DURATION) return
+
+      lastRenderTime = time
       program.uniforms.uTime.value = time * 0.0001 * speed
       renderer.render({ scene: mesh })
     }
-    animationFrame = requestAnimationFrame(update)
+
+    const startAnimation = () => {
+      if (animationFrame || !isInViewport || document.hidden) return
+      animationFrame = requestAnimationFrame(update)
+    }
+
+    const stopAnimation = () => {
+      cancelAnimationFrame(animationFrame)
+      animationFrame = 0
+    }
+
+    const intersectionObserver = new IntersectionObserver(([entry]) => {
+      isInViewport = entry.isIntersecting
+      if (isInViewport) startAnimation()
+      else stopAnimation()
+    })
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) stopAnimation()
+      else startAnimation()
+    }
+
+    intersectionObserver.observe(container)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
 
     return () => {
-      cancelAnimationFrame(animationFrame)
+      stopAnimation()
+      intersectionObserver.disconnect()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       resizeObserver.disconnect()
       if (gl.canvas.parentNode === container) container.removeChild(gl.canvas)
       gl.getExtension('WEBGL_lose_context')?.loseContext()

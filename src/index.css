@@ -345,7 +345,9 @@ h1 {
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5), 0 0 70px rgba(34, 167, 255, 0.18);
 }
 
-.hero-video-shell iframe {
+.hero-video-shell iframe,
+.hero-video-shell .youtube-facade {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
@@ -354,8 +356,62 @@ h1 {
   background: #111;
 }
 
-.hero-video-shell iframe {
+.youtube-facade {
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  cursor: pointer;
+}
+
+.youtube-facade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), transparent 55%);
+}
+
+.youtube-facade img {
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  transition: filter 240ms ease;
+}
+
+.youtube-facade:hover img {
+  filter: brightness(1.05);
+}
+
+.youtube-facade:focus-visible {
+  outline: 3px solid #71ccff;
+  outline-offset: 3px;
+}
+
+.youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 68px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.78);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.38);
+  transform: translate(-50%, -50%);
+}
+
+.youtube-play-button > span {
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid #fff;
 }
 
 .video-fallback {
@@ -384,6 +440,31 @@ h1 {
 
 .section {
   padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+@supports (content-visibility: auto) {
+  .section:not(.faq-section),
+  .final-cta-section,
+  .site-footer {
+    content-visibility: auto;
+  }
+
+  .section:not(.faq-section) {
+    contain-intrinsic-size: auto 800px;
+  }
+
+  .demo-section,
+  .platform-section {
+    contain-intrinsic-size: auto 1000px;
+  }
+
+  .final-cta-section {
+    contain-intrinsic-size: auto 650px;
+  }
+
+  .site-footer {
+    contain-intrinsic-size: auto 420px;
+  }
 }
 
 .section-light,
@@ -709,7 +790,8 @@ h1 {
   background: #121821;
 }
 
-.demo-card iframe {
+.demo-card iframe,
+.demo-card .youtube-facade {
   display: block;
   width: 100%;
   aspect-ratio: 9 / 16;

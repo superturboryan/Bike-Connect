@@ -63,7 +63,7 @@ export function Header() {
       <header className="site-header">
         <div className="nav-container">
           <a href="/" className="brand" aria-label="Bike Connect home">
-            <img src="/app-icon-ios.png" alt="" width="42" height="42" />
+            <img src="/app-icon-ios-192.png" alt="" width="42" height="42" decoding="async" />
             <span>Bike Connect</span>
           </a>
           <nav aria-label="Primary navigation" className="nav-links">
@@ -84,7 +84,7 @@ export function Footer() {
       <div className="container footer-layout">
         <div>
           <a href="/" className="brand footer-brand">
-            <img src="/app-icon-ios.png" alt="" width="38" height="38" />
+            <img src="/app-icon-ios-192.png" alt="" width="38" height="38" loading="lazy" decoding="async" />
             <span>Bike Connect</span>
           </a>
           <p>Less distraction. More ride.</p>
