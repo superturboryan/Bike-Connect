@@ -295,20 +295,20 @@ h1 {
 
 .hero-video-shell {
   position: relative;
-  width: min(100%, 420px);
+  width: min(100%, 560px);
   justify-self: center;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid rgba(91, 194, 255, 0.25);
-  border-radius: 34px;
+  border-radius: 24px;
   background: rgba(13, 33, 55, 0.72);
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5), 0 0 70px rgba(34, 167, 255, 0.18);
 }
 
 .hero-video-shell iframe {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 16 / 9;
   border: 0;
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   background: #111;
 }
@@ -319,10 +319,24 @@ h1 {
 
 .video-fallback {
   display: block;
-  margin: 0.8rem auto 0.1rem;
+  margin: 0.35rem auto 0.1rem;
   color: #9ea8b6;
   font-size: 0.78rem;
   text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.video-attribution {
+  margin: 0.85rem 0 0;
+  color: #9ea8b6;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.video-attribution a {
+  color: #d6ecff;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }

@@ -4,7 +4,8 @@ import Aurora from './components/reactbits/Aurora'
 import FadeContent from './components/reactbits/FadeContent'
 import SpotlightCard from './components/reactbits/SpotlightCard'
 
-const DEMO_URL = 'https://www.youtube.com/watch?v=TRTYLt4lUhg'
+const REVIEW_URL = 'https://www.youtube.com/watch?v=ZwaorZB3_6s'
+const DEMO_URL = `${REVIEW_URL}&t=103s`
 
 const features = [
   { number: '01', title: 'Music without reaching', description: 'Play, pause, skip, mute, or adjust volume from the programmable buttons already under your thumbs.' },
@@ -25,13 +26,14 @@ function HeroVideo() {
   return (
     <FadeContent className="hero-video-shell" delay={140} duration={820} blur>
       <iframe
-        src="https://www.youtube-nocookie.com/embed/TRTYLt4lUhg?rel=0&playsinline=1"
-        title="Bike Connect iPhone demo"
+        src="https://www.youtube-nocookie.com/embed/ZwaorZB3_6s?start=103&rel=0&playsinline=1"
+        title="BetterShifting review of Bike Connect"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         loading="eager"
         allowFullScreen
       />
-      <a className="video-fallback" href={DEMO_URL} target="_blank" rel="noopener noreferrer">Open the demo on YouTube</a>
+      <p className="video-attribution">As seen on <a href={DEMO_URL} target="_blank" rel="noopener noreferrer">BetterShifting</a></p>
+      <a className="video-fallback" href={REVIEW_URL} target="_blank" rel="noopener noreferrer">Watch the full review on YouTube</a>
     </FadeContent>
   )
 }
