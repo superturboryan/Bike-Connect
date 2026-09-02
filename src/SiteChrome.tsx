@@ -3,6 +3,9 @@ import { FaAppStoreIos, FaGooglePlay } from 'react-icons/fa6'
 
 export const APP_STORE_URL = 'https://apps.apple.com/app/id6746517051'
 export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.stylesdevelopments.bikeconnect'
+// Maintenance reminder: the current TestFlight build expires on December 2, 2026.
+// Upload a replacement build or remove the beta CTA if public testing is no longer needed.
+export const TESTFLIGHT_URL = 'https://testflight.apple.com/join/a5rzZ3Th'
 
 export type StorePlatform = 'apple' | 'android'
 export type StorePlacement = 'header' | 'hero' | 'sticky' | 'final' | 'footer' | 'content'
@@ -53,6 +56,27 @@ export function StoreButtons({ placement, compact = false }: { placement: StoreP
         </span>
       </StoreLink>
     </div>
+  )
+}
+
+export function TestFlightButton({ placement }: { placement: StorePlacement }) {
+  return (
+    <a
+      href={TESTFLIGHT_URL}
+      className="store-button testflight-button"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cta-placement={placement}
+      data-cta-type="testflight"
+    >
+      <span className="store-button-content">
+        <img className="store-button-icon testflight-button-icon" src="/testflight-airplane.svg" alt="" width="29" height="29" />
+        <span className="store-button-copy">
+          <span className="store-button-label">Try for free with</span>
+          <strong>TestFlight</strong>
+        </span>
+      </span>
+    </a>
   )
 }
 

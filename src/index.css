@@ -874,6 +874,14 @@ h1 {
   color: #aeb7c3;
 }
 
+.testflight-button {
+  min-width: 180px;
+}
+
+.testflight-button-icon {
+  object-fit: contain;
+}
+
 .site-footer {
   padding-block: 3.5rem;
   border-top: 1px solid var(--border);

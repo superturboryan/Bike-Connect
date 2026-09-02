@@ -158,6 +158,57 @@
   font-size: 0.92rem;
 }
 
+.support-beta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 1.3rem;
+  border: 1px solid #9ed5f4;
+  border-radius: 16px;
+  color: #20252c;
+  background: #fff;
+}
+
+.support-beta strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.content-main .support-beta p {
+  margin: 0.4rem 0 0;
+  color: #56616f;
+  font-size: 0.9rem;
+}
+
+.content-main .support-beta a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.support-beta .testflight-button {
+  border-color: #1688c9;
+  background: linear-gradient(135deg, #0870b4, #2da9e9);
+  box-shadow: 0 8px 20px rgba(0, 107, 173, 0.18);
+}
+
+.support-beta .testflight-button:hover {
+  border-color: #006bad;
+  background: linear-gradient(135deg, #0066a8, #229ddd);
+}
+
+.support-beta .testflight-button .store-button-label {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+}
+
+.support-beta small {
+  grid-column: 1 / -1;
+  color: #7a8491;
+  font-size: 0.72rem;
+}
+
 .support-actions {
   display: flex;
   flex-wrap: wrap;
@@ -288,6 +339,14 @@
   .content-main h3,
   .content-cta h2 {
     letter-spacing: 0;
+  }
+
+  .support-beta {
+    grid-template-columns: 1fr;
+  }
+
+  .support-beta small {
+    grid-column: auto;
   }
 
   .requirements-grid {
