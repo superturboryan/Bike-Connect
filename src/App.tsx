@@ -117,6 +117,7 @@ function App() {
             <div className="demo-grid">
               <article className="demo-card"><YouTubeFacade videoId="hF24SAiNS_M" title="Bike Connect Mac demo" thumbnailSrc="/video-mac-demo.webp" /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
               <article className="demo-card"><YouTubeFacade videoId="MQUgxA9LwYc" title="Bike Connect Apple Watch demo" thumbnailSrc="/video-watch-demo.webp" /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
+              <article className="demo-card"><YouTubeFacade videoId="zyek7Uga04k" title="Bike Connect Android demo by Taylor" thumbnailSrc="https://i.ytimg.com/vi/zyek7Uga04k/maxresdefault.jpg" /><div className="demo-caption"><strong>Android demo</strong><small>YouTube</small></div></article>
             </div>
           </div>
         </section>
