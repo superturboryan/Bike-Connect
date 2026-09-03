@@ -16,6 +16,7 @@
   --panel: #121821;
   --border: rgba(255, 255, 255, 0.12);
   --max-width: 1180px;
+  --motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -216,6 +217,34 @@ img {
   max-width: 700px;
 }
 
+@keyframes hero-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-media-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-copy {
+  animation: hero-content-enter 680ms var(--motion-ease-out) both;
+}
+
 .eyebrow {
   margin: 0 0 1rem;
   color: #6dc7ff;
@@ -343,6 +372,7 @@ h1 {
   border-radius: 24px;
   background: rgba(13, 33, 55, 0.72);
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.5), 0 0 70px rgba(34, 167, 255, 0.18);
+  animation: hero-media-enter 720ms var(--motion-ease-out) both;
 }
 
 .hero-video-shell iframe,
@@ -403,6 +433,7 @@ h1 {
   background: rgba(0, 0, 0, 0.78);
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.38);
   transform: translate(-50%, -50%);
+  transition: transform 200ms var(--motion-ease-out), background-color 200ms ease;
 }
 
 .youtube-play-button > span {
@@ -572,6 +603,11 @@ h1 {
   margin-top: 2rem;
   color: #006bad;
   font-weight: 750;
+}
+
+.section-link > span,
+.text-link > span {
+  transition: transform 180ms var(--motion-ease-out);
 }
 
 .section-link:hover,
@@ -843,6 +879,11 @@ h1 {
 .faq-item button > span:last-child {
   color: #006bad;
   font-size: 1.45rem;
+  transition: transform 180ms var(--motion-ease-out);
+}
+
+.faq-item button[aria-expanded="true"] > span:last-child {
+  transform: rotate(180deg);
 }
 
 .faq-answer p {
@@ -948,6 +989,30 @@ h1 {
 .maker-note a:focus-visible {
   color: #fff;
   text-decoration-color: #6dc7ff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .youtube-facade:hover .youtube-play-button {
+    background: rgba(0, 70, 125, 0.9);
+    transform: translate(-50%, -50%) scale(1.045);
+  }
+
+  .section-link:hover > span,
+  .text-link:hover > span {
+    transform: translateX(3px);
+  }
+
+  .platform-card,
+  .compatibility-list > div,
+  .demo-card {
+    transition: transform 220ms var(--motion-ease-out);
+  }
+
+  .platform-card:hover,
+  .compatibility-list > div:hover,
+  .demo-card:hover {
+    transform: translateY(-3px);
+  }
 }
 
 @media (max-width: 850px) {
@@ -1275,5 +1340,10 @@ h1 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-copy,
+  .hero-video-shell {
+    animation: none;
   }
 }

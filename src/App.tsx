@@ -63,11 +63,13 @@ function App() {
         <section id="how-it-works" className="section section-light">
           <div className="container">
             <FadeContent className="section-heading"><p className="eyebrow">Set up in minutes</p><h2>Pair. Personalize. Ride.</h2><p>Bike Connect turns an extra set of Di2 buttons into controls that feel natural from the first ride.</p></FadeContent>
-            <ol className="steps-grid">
-              <li><span>1</span><h3>Wake and pair</h3><p>Put your bike in Bluetooth pairing mode, open Bike Connect, and select your bike.</p></li>
-              <li><span>2</span><h3>Choose your actions</h3><p>Assign single and double taps to the controls that matter on your ride.</p></li>
-              <li><span>3</span><h3>Keep your eyes up</h3><p>Lock your phone or leave it mounted. Your thumbs stay on the bars and in control.</p></li>
-            </ol>
+            <FadeContent duration={560}>
+              <ol className="steps-grid">
+                <li><span>1</span><h3>Wake and pair</h3><p>Put your bike in Bluetooth pairing mode, open Bike Connect, and select your bike.</p></li>
+                <li><span>2</span><h3>Choose your actions</h3><p>Assign single and double taps to the controls that matter on your ride.</p></li>
+                <li><span>3</span><h3>Keep your eyes up</h3><p>Lock your phone or leave it mounted. Your thumbs stay on the bars and in control.</p></li>
+              </ol>
+            </FadeContent>
             <a className="section-link" href="/how-to-control-your-phone-with-shimano-di2-buttons">Read the complete setup guide <span aria-hidden="true">→</span></a>
           </div>
         </section>
@@ -75,9 +77,11 @@ function App() {
         <section id="features" className="section feature-section">
           <div className="container">
             <FadeContent className="section-heading section-heading-dark"><p className="eyebrow">More from every tap</p><h2>Your handlebars become a control surface.</h2><p>Useful actions, immediate bike information, and fewer reasons to touch a screen while riding.</p></FadeContent>
-            <div className="feature-grid">
-              {features.map((feature) => <SpotlightCard className="feature-card" key={feature.title}><article><span className="feature-number">{feature.number}</span><h3>{feature.title}</h3><p>{feature.description}</p></article></SpotlightCard>)}
-            </div>
+            <FadeContent duration={560}>
+              <div className="feature-grid">
+                {features.map((feature) => <SpotlightCard className="feature-card" key={feature.title}><article><span className="feature-number">{feature.number}</span><h3>{feature.title}</h3><p>{feature.description}</p></article></SpotlightCard>)}
+              </div>
+            </FadeContent>
           </div>
         </section>
 
@@ -92,33 +96,39 @@ function App() {
                 <span className="device-symbol device-symbol-mac" />
               </FadeContent>
             </div>
-            <div className="platform-showcase">
-              <article className="platform-card"><div className="platform-copy"><p className="platform-label">iOS + Android</p><h3>Phone &amp; tablet</h3><p>Pair your bike, personalize every tap, control media and lights, and view live ride data.</p></div></article>
-              <article className="platform-card"><div className="platform-copy"><p className="platform-label">watchOS</p><h3>Apple Watch</h3><p>See your gear and ring the bell from your wrist, with no phone connection required.</p></div></article>
-              <article className="platform-card"><div className="platform-copy"><p className="platform-label">macOS</p><h3>Mac</h3><p>Map Di2 buttons to keyboard shortcuts for indoor cycling, music, and volume controls.</p></div></article>
-            </div>
+            <FadeContent duration={560}>
+              <div className="platform-showcase">
+                <article className="platform-card"><div className="platform-copy"><p className="platform-label">iOS + Android</p><h3>Phone &amp; tablet</h3><p>Pair your bike, personalize every tap, control media and lights, and view live ride data.</p></div></article>
+                <article className="platform-card"><div className="platform-copy"><p className="platform-label">watchOS</p><h3>Apple Watch</h3><p>See your gear and ring the bell from your wrist, with no phone connection required.</p></div></article>
+                <article className="platform-card"><div className="platform-copy"><p className="platform-label">macOS</p><h3>Mac</h3><p>Map Di2 buttons to keyboard shortcuts for indoor cycling, music, and volume controls.</p></div></article>
+              </div>
+            </FadeContent>
           </div>
         </section>
 
         <section className="section compatibility-section">
           <div className="container compatibility-layout">
             <div><p className="eyebrow">Compatibility</p><h2>Built for Bluetooth-enabled Di2.</h2><p>Bike Connect works with Shimano Di2 systems that expose their controls and ride data over Bluetooth LE.</p><a className="text-link" href="/support#compatibility">Check compatibility details <span aria-hidden="true">→</span></a><p className="compatibility-caveat">Bluetooth LE and readable hood, top, or shift-switch buttons are required. Only one bike app can connect at a time.</p></div>
-            <div className="compatibility-list" role="list">
-              <div role="listitem"><strong>Modern road Di2</strong><span>DURA-ACE R9200, ULTEGRA R8100, and SHIMANO 105 R7100.</span></div>
-              <div role="listitem"><strong>GRX Di2</strong><span>RX825 and RX827; RX815 and RX817 with compatible D-FLY wireless hardware.</span></div>
-              <div role="listitem"><strong>11-speed road Di2</strong><span>DURA-ACE R9150/R9170 and ULTEGRA R8050/R8070 with EW-WU101 or EW-WU111.</span></div>
-              <div role="listitem"><strong>MTB Di2</strong><span>XTR M9250/M9050, DEORE XT M8250/M8050, and DEORE M6250; older systems require compatible Bluetooth hardware.</span></div>
-            </div>
+            <FadeContent duration={560}>
+              <div className="compatibility-list" role="list">
+                <div role="listitem"><strong>Modern road Di2</strong><span>DURA-ACE R9200, ULTEGRA R8100, and SHIMANO 105 R7100.</span></div>
+                <div role="listitem"><strong>GRX Di2</strong><span>RX825 and RX827; RX815 and RX817 with compatible D-FLY wireless hardware.</span></div>
+                <div role="listitem"><strong>11-speed road Di2</strong><span>DURA-ACE R9150/R9170 and ULTEGRA R8050/R8070 with EW-WU101 or EW-WU111.</span></div>
+                <div role="listitem"><strong>MTB Di2</strong><span>XTR M9250/M9050, DEORE XT M8250/M8050, and DEORE M6250; older systems require compatible Bluetooth hardware.</span></div>
+              </div>
+            </FadeContent>
           </div>
         </section>
 
         <section className="section demo-section">
           <div className="container"><FadeContent className="section-heading section-heading-dark"><p className="eyebrow">See the ride</p><h2>Bike Connect across every screen.</h2></FadeContent>
-            <div className="demo-grid">
-              <article className="demo-card"><YouTubeFacade videoId="hF24SAiNS_M" title="Bike Connect Mac demo" thumbnailSrc="/video-mac-demo.webp" /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
-              <article className="demo-card"><YouTubeFacade videoId="MQUgxA9LwYc" title="Bike Connect Apple Watch demo" thumbnailSrc="/video-watch-demo.webp" /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
-              <article className="demo-card"><YouTubeFacade videoId="zyek7Uga04k" title="Bike Connect Android demo by Taylor" thumbnailSrc="https://i.ytimg.com/vi/zyek7Uga04k/maxresdefault.jpg" /><div className="demo-caption"><strong>Android demo</strong><small>YouTube</small></div></article>
-            </div>
+            <FadeContent duration={560}>
+              <div className="demo-grid">
+                <article className="demo-card"><YouTubeFacade videoId="hF24SAiNS_M" title="Bike Connect Mac demo" thumbnailSrc="/video-mac-demo.webp" /><div className="demo-caption"><strong>Mac demo</strong><small>YouTube</small></div></article>
+                <article className="demo-card"><YouTubeFacade videoId="MQUgxA9LwYc" title="Bike Connect Apple Watch demo" thumbnailSrc="/video-watch-demo.webp" /><div className="demo-caption"><strong>Apple Watch demo</strong><small>YouTube</small></div></article>
+                <article className="demo-card"><YouTubeFacade videoId="zyek7Uga04k" title="Bike Connect Android demo by Taylor" thumbnailSrc="https://i.ytimg.com/vi/zyek7Uga04k/maxresdefault.jpg" /><div className="demo-caption"><strong>Android demo</strong><small>YouTube</small></div></article>
+              </div>
+            </FadeContent>
           </div>
         </section>
 
